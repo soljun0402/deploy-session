@@ -139,9 +139,6 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
 CONFIG_SETTINGS_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
 
-AWS_REGION = 'ap-northeast-2'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
-
 STATICFILES_LOCATION = 'static'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3DefaultStorage'
