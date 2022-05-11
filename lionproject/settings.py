@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,15 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AWS S3
+AWS_ACCESS_KEY_ID ='AKIAT4I2K4WDCQZB5IXX'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'likelion.22'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+
+STATICFILES_LOCATION = 'static'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3DefaultStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
